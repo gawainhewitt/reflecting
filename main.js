@@ -28,7 +28,6 @@ let introFont;
 
 //******BUTTONS******/
 
-let loadButton; // in setup this becomes an object with all the ingredients for a load button
 let playButton; // in setup this becomes an object with all the ingredients for a play button
 let recordButton; // as above
 let infoButton;
@@ -188,14 +187,7 @@ let effectFont;
 
 function createButtonPositions() {
     effectFont = [fxFont1, fxFont2, fxFont3, fxFont4, fxFont5];
-    loadButton = ({
-        x: width/4,
-        y: height/5,
-        state: false,
-        colour: colours.loadOff,
-        textColour: colours.textOff,
-        text: 'LOAD NEW'
-    });
+   
     playButton = ({
         x: (width/4) * 2,
         y: (height/7) * 3,
@@ -247,7 +239,6 @@ function buildTheLook(){
     // stroke(0);
     // stroke(255);
     noStroke();
-    fill(loadButton.colour);
     textSize(width/25);
     textFont(fontRegular);
     textAlign(CENTER, CENTER);
@@ -264,8 +255,6 @@ function buildTheLook(){
         textSize(width/40);
         noFill();
         strokeWeight(wigmoreLogoThickness); // how bold are the icons
-        stroke(loadButton.colour);
-        circle(loadButton.x, loadButton.y, buttonRadius);
         strokeWeight(buttonTextThickness);
         // textFont('Helvetica');
         rectMode(CENTER);
@@ -276,9 +265,6 @@ function buildTheLook(){
         text(infoButton.text, infoButton.x, infoButton.y);
         text(ctrlButton.text, ctrlButton.x, ctrlButton.y);
         textFont(fontRegular);
-        fill(loadButton.textColour);
-        stroke(loadButton.textColour);
-        text(loadButton.text, loadButton.x, loadButton.y + buttonRadius * 0.8);
         if(Tone.UserMedia.supported){
             noFill();
             strokeWeight(wigmoreLogoThickness);
@@ -391,8 +377,6 @@ function audioVisualisation(){
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-    loadButton.x = width/4;
-    loadButton.y = height/5;
     playButton.x = (width/4) * 2;
     playButton.y = (height/7) * 2.5;
     recordButton.x = (width/4) * 3;
@@ -474,11 +458,6 @@ function handleClick() {
         document.getElementById("p5parent").style.visibility = "visible";
         interfaceState = 1;
     }else{
-        let d = dist(mouseX, mouseY, loadButton.x, loadButton.y);
-        if (d < buttonRadius/2) {
-            debounce(loadButtonPressed(), 200);
-            loadButton.state = true;
-        }
         if(Tone.UserMedia.supported){
             let d4 = dist(mouseX, mouseY, recordButton.x, recordButton.y);
             if (d4 < buttonRadius/2) {
@@ -520,21 +499,6 @@ function handleClick() {
             interfaceState = 3;
         }
     }
-}
-
-function loadButtonPressed() {
-    uneffectedSongPlayer.stop();
-    effectedSongPlayer.stop();
-    Tone.Transport.stop();
-    playButton.colour = colours.playOff;
-    // playButton.textColour = colours.textOff;
-    playButton.text = 'PLAY';
-    reload();
-    lastBuffer = currentBuffer;
-    console.log(`lastBuffer = ${lastBuffer}`);
-    loadButton.colour = colours.on;
-    // loadButton.textColour = colours.on;
-    chooseSample();
 }
 
 function recordButtonPressed(){
@@ -785,7 +749,6 @@ function assignSoundToPlayer() {
             console.log("buffer 0 loaded");
             bufferToPlay = buffer0;
             currentBuffer = 0;
-            loadButton.colour = colours.loadOff;
             console.log(`currentBuffer = ${currentBuffer}`);
             // if (interfaceState === 0){
             //     reload();
@@ -807,7 +770,6 @@ function assignSoundToPlayer() {
             console.log("buffer 0 loaded");
             bufferToPlay = buffer0;
             currentBuffer = 0;
-            loadButton.colour = colours.loadOff;
             console.log(`currentBuffer = ${currentBuffer}`);
             if (interfaceState === 0){
                 reload();
@@ -822,7 +784,6 @@ function assignSoundToPlayer() {
             console.log("buffer 1 loaded");
             bufferToPlay = buffer1;
             currentBuffer = 1;
-            loadButton.colour = colours.loadOff;
             console.log(`currentBuffer = ${currentBuffer}`);
             if (interfaceState === 0){
                 reload();
