@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflections</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.69/Tone.js'></script>  <!-- bring in the Tone.js library - google search for tone.js cdn-->
+  <script src="p5.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+  <div id="logopage">
+    <p class="invisibletitle">REFLECTIONS</p>
+    <p style="font-size: 12vw">REFLECTIONS</p>
+    <p style="font-size: 2vh" class="invisibletitle">An installation by Gawain Hewitt</p>
+    <img id = "wigmorelogo" src="assets/learningLogo.png" alt="Wigmore Hall Learning Logo" width="10" height="10" class="centre">
+    <div class="enough">
+      <div class="newbutton">
+        <p id="p5_loading" class="nextbutton">LOADING</p>
+        <p id="startbutton" class="nextbutton">START</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="aboutpage">
+    <div>
+
+      <div class="column2">
+        <p class="invisibletitle">test</p> <!-- this and the pther visible one below, together with the styling in CSS ensures that the START button and the box around it are central-->
+      </div>
+
+      <div class="column3">
+        <p class="invisibletitle2">Info text 1</p>
+        <p style="font-size: 4vh">
+          This is an interactive sound installation by <a href="https://gawainhewitt.co.uk/" target="blank">Gawain Hewitt.</a>
+          <br>
+          <br>
+          Created for the <a href="https://wigmore-hall.org.uk/learning/learning-festival-2022-reflections" target="blank">Wigmore Hall Learning Festival, <i>Reflections</i></a>, this installation invites you to create new musical sounds by manipulating original audio using a series of specially created effects.
+          <br>
+          <br>
+          Like a droplet on the surface of water changes a reflection, these effects change the sound in endlessly unexpected ways, allowing for hours of musical play!
+          <br>
+          <br>
+          The featured Wigmore Hall Learning sounds are: an excerpt of Daniel Fardon's <span class="speech">'</span>Six Movements<span class="speech">'</span> performed by the Bloomsbury Quartet at Wigmore Hall, as well as recordings from <a href="https://wigmore-hall.org.uk/learning/chamber-tots" target="blank">Chamber Tots</a>, <a href="https://wigmore-hall.org.uk/learning/music-for-life" target="blank">Singing With Friends</a>, <a href="https://wigmore-hall.org.uk/learning/partner-schools-programme" target="blank">Chestnuts Primary School</a> and <a href="https://wigmore-hall.org.uk/learning/come-and-create" target="blank">Come and Create</a>.
+          <br>
+          <br>
+        </p>
+        <!-- <p class="invisibletitle">blah blah blah</p> -->
+      </div>
+
+      <div class="column2">
+        <p class="invisibletitle">test</p> <!-- this and the pther visible one below, together with the styling in CSS ensures that the START button and the box around it are central-->
+      </div>
+
+    </div>
+
+    <div class="enough">
+
+      <div class="column">
+        <p class="invisibletitle">test</p> <!-- this and the pther visible one below, together with the styling in CSS ensures that the START button and the box around it are central-->
+      </div>
+
+      <div class="column">
+        <p class="nextbutton">NEXT</p>
+      </div>
+
+      <div class="column">
+        <p class="invisibletitle">test</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="howtopage">
+
+    <div>
+
+      <div class="column2">
+        <p class="invisibletitle">test</p> <!-- this and the pther visible one below, together with the styling in CSS ensures that the START button and the box around it are central-->
+      </div>
+
+      <div class="column3">
+        <p class="invisibletitle2">Info text 1</p>
+        <p style="font-size: 4vh">
+          Press <span class="speech">'</span>load new<span class="speech">'</span> then <span class="speech">'</span>play<span class="speech">'</span> to begin hearing a snippet of sound from the <a href="https://wigmore-hall.org.uk/learning/learning-landing-page">Wigmore Hall Learning programme</a>, or press <span class="speech">'</span>record<span class="speech">'</span> to capture your own sound file using your phone or computer's microphone.
+        <br>
+        <br>
+        Use the effect buttons to change the sound's reflection.
+        <br>
+        <br>
+        Each time you click an effect it will behave slightly differently, as some of the parameters are chosen randomly. <span class="speech">'</span>Chop<span class="speech">'</span> slices the sound up, adding a sense of rhythm. <span class="speech">'</span>Speed<span class="speech">'</span> either speeds up or slows down the sound. <span class="speech">'</span>Reverb<span class="speech">'</span> gives the effect of being in a large space, such as Wigmore Hall itself. <span class="speech">'</span>Reverse<span class="speech">'</span> plays the sound backwards (may not work on all browsers). <span class="speech">'</span>Echo<span class="speech">'</span> repeats the sound at a random interval.
+        <br>
+        <br>
+        <span style='font-size: 3vh'>Best experienced on Google Chrome.
+        <br>
+        <br>
+        Remember to switch your side mute button to off if on an iPhone.</span>
+        <br>
+        <br>
+        </p>
+        <!-- <p class="invisibletitle">blah blah blah</p> -->
+      </div>
+
+      <div class="column2">
+        <p class="invisibletitle">test</p> <!-- this and the pther visible one below, together with the styling in CSS ensures that the START button and the box around it are central-->
+      </div>
+
+    </div>
+
+    <div class="enough">
+
+      <div class="column">
+        <p class="invisibletitle">test</p> <!-- this and the pther visible one below, together with the styling in CSS ensures that the START button and the box around it are central-->
+      </div>
+
+      <div class="column">
+        <p class="nextbutton">NEXT</p>
+      </div>
+
+      <div class="column">
+        <p class="invisibletitle">test</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="container" class="containerclass">
+
+    <div id="p5parent"></div>
+
+  </div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
