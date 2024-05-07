@@ -1,2 +1,4 @@
-*
+#ignore all files in this folder
+* 
+#but keep the gitignore which means that the dist folder itself is kept 
 !.gitignore
